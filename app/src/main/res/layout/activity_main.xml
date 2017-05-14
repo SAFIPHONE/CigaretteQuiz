@@ -1,0 +1,510 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="support.android.com.cigarettequiz.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <EditText
+            android:id="@+id/name_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:hint="Name"
+            android:inputType="textCapWords" />
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="1. Age " />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/AgeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/buttonAge1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addPointsForAge"
+                    android:text="18-25 years" />
+
+                <RadioButton
+
+                    android:id="@+id/buttonAge2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addPointsForAge"
+                    android:text="25-35 years" />
+
+                <RadioButton
+                    android:id="@+id/buttonAge3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addPointsForAge"
+                    android:text="35-45 years" />
+
+                <RadioButton
+                    android:id="@+id/buttonAge4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="addPointsForAge"
+                    android:text="&#62; 45 years" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text=" 2. How many cigarettes do you smoke per day" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/CigarettesGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/buttonCig1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCigarette"
+                    android:text="0-5" />
+
+                <RadioButton
+                    android:id="@+id/buttonCig2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCigarette"
+                    android:text="6-10" />
+
+                <RadioButton
+                    android:id="@+id/buttonCig3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCigarette"
+                    android:text="10-20" />
+
+                <RadioButton
+                    android:id="@+id/buttonCig4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCigarette"
+                    android:text="&#62; 20" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="3. How long have you been started to smoke?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/HowLongGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/buttonSmoke1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForSmoke"
+                    android:text="&#60; 1 year" />
+
+                <RadioButton
+                    android:id="@+id/buttonSmoke2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForSmoke"
+                    android:text="1-5 years" />
+
+                <RadioButton
+                    android:id="@+id/buttonSmoke3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForSmoke"
+                    android:text="5-10 years" />
+
+                <RadioButton
+                    android:id="@+id/buttonSmoke4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForSmoke"
+                    android:text="&#62; 10 years" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="4. What kind of cigarettes are you smoking?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/KindGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/buttonKind1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForKind"
+                    android:text="Strong" />
+
+                <RadioButton
+                    android:id="@+id/buttonKind2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForKind"
+                    android:text="Medium" />
+
+                <RadioButton
+                    android:id="@+id/buttonKind3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForKind"
+                    android:text="Light" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="5. Did you happen to cough because of cigarettes?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/CoughGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/buttonCough1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCough"
+                    android:text="Yes" />
+
+                <RadioButton
+                    android:id="@+id/buttonCough2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCough"
+                    android:text="No" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="6. Which is the main reason that you smoke?(multiple-choices)" />
+
+        <CheckBox
+            android:id="@+id/daily_problems_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="Stress caused by daily problems"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/friends_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="All my friends are smoking"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/work_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="At my work everyone is smoking"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/habit_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="Habit"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/ilikeit_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="Because I like it"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="7. When do you smoke frequently?(multiple-choices)" />
+
+        <CheckBox
+            android:id="@+id/at_work_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="At work"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/at_home_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="At home"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/in_pub_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="In a restaurant/pub."
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/same_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="Everywhere is the same"
+            android:textSize="16sp" />
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="8. When do you fell the need to smoke a lot?(multiple-choices)" />
+
+        <CheckBox
+            android:id="@+id/angry_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="When I'm angry"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/when_stressed_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="When I'm stressed"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/when_restless_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="When I'm restless"
+            android:textSize="16sp" />
+
+        <CheckBox
+            android:id="@+id/equally_checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:paddingLeft="24dp"
+            android:text="I smoke equally"
+            android:textSize="16sp" />
+
+
+        <TextView
+            style="@style/HeaderTextSyle"
+            android:text="9. Have anti-smoking campaigns influenced you?" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0">
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/CampaignGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/buttonCampaign1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCampaign"
+                    android:text="Yes, I smoke less." />
+
+                <RadioButton
+                    android:id="@+id/buttonCampaign2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCampaign"
+                    android:text="I quit smoking." />
+
+                <RadioButton
+                    android:id="@+id/buttonCampaign3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:onClick="addForCampaign"
+                    android:text="No, i smoke the same" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:onClick="submitResult"
+                android:text="Check my result" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/result_final"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center_horizontal"
+            android:padding="24dp"
+            android:text="0"
+            android:textColor="#000000"
+            android:textSize="56sp" />
+
+    </LinearLayout>
+
+</ScrollView>
